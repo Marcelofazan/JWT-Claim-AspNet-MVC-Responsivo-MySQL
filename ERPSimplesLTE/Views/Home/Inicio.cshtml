@@ -1,0 +1,75 @@
+﻿@using Newtonsoft.Json;
+@using System.Web.Mvc;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Início";
+
+    string Tokenjwt = "";
+
+    if (Request.Cookies["jwt"] != null)
+    {
+        Tokenjwt = Request.Cookies["jwt"].Value;
+    }
+}
+
+@using System.Security.Claims;
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card card-info">
+                    <div class="card-header">
+                        <h3 class="card-title">JWT Token + Claim</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <div class="form-group">
+                            <div style="display:flex;justify-content:flex-end;">
+                                <div><a href="/Conta/EncerrarSessao">Encerrar Sessão</a></div>
+                            </div>
+
+                            <h1>Claims</h1>
+
+                            @if (!string.IsNullOrEmpty(Tokenjwt))
+                            {
+                                <p>O Token é: <strong>@Tokenjwt</strong></p>
+                            }
+                            else
+                            {
+                                <p>Token não encontrado.</p>
+                            }
+                            <br />
+                        </div>
+                        <!-- /.form-group -->
+                        <div class="form-group">
+                            @if (HttpContext.Current.User.Identity.IsAuthenticated)
+                            {
+                                var principal = HttpContext.Current.User as ClaimsPrincipal;
+                                if (principal != null && principal.Claims.Any())
+                                {
+                                    <table class="table">
+                                        @foreach (var claim in principal.Claims)
+                                        {
+                                            <tr>
+                                                <td><b>@claim.Type</b></td>
+                                                <td>@claim.Value</td>
+                                            </tr>
+                                        }
+                                    </table>
+                                }
+                            }
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<!-- /.content -->

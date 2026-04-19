@@ -1,2 +1,4 @@
-# Auto detect text files and perform LF normalization
+ERPSimplesLTE/Scripts/* linguist-language=C#
+ERPSimplesLTE/Content/* linguist-language=C#
+*.cshtml linguist-language=C#
 * text=auto
