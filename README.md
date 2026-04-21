@@ -1,4 +1,4 @@
-# JWT-Claim-AspNet-MVC-Responsivo-MySQL
+# JWT-Auth-MVC
 
 Exemplo de utilização de AdminLTE na Autorização de Segurança Claims e JWT com geração do Token para Segurança na Navegação em MVC com banco de dados MySQL.
 
