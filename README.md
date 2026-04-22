@@ -27,7 +27,7 @@ Ficara com a seguinte estrutura
      |---------plugins
 ```
 
-# O que você vai encontrar neste projeto
+## O que você vai encontrar neste projeto
 
 - **AdminLTE** - Layout Responsivo JavaScript e uso de bibliotecas (Plugins).
 - **Dicionário de Dados** - Contexto definido realizado manualmente com T-SQL.
@@ -38,7 +38,7 @@ Ficara com a seguinte estrutura
 
 Para executar a aplicação é necessário a execução do Script do MySql. 
 
-## String de conexão do banco
+### String de conexão do banco
 
 Modifique a string de conexão no arquivo **Web.config**, no trecho indicado:
 
@@ -50,6 +50,8 @@ Modifique a string de conexão no arquivo **Web.config**, no trecho indicado:
 ```
 
 O script para criação da tabela do exemplo encontra-se na pasta **Database**.
+
+#### Aqui está uma demonstração do Projeto
 
 <img width="1333" height="612" alt="19 04 2026_19 13 55_REC" src="https://github.com/user-attachments/assets/3c9cdbbe-cc65-46ed-97bd-d335ed109cd2" />
 
