@@ -19,7 +19,7 @@ Criar uma nova pasta chamada adminlte no Solution do Projeto
 Ficara com a seguinte estrutura 
 
 **Solution** Pasta na Raiz do Projeto 
-```
+```bash
 adminlte
 |-------|
         |-------| /css
